@@ -8,6 +8,15 @@ namespace AddressBook_LINQ
 {
     public class AddressBookMain
     {
-
+        public void TopRecords(List<Contacts> contacts)
+        {
+            var result = (from contact in contacts
+                          orderby contact.FirstName descending
+                          select contact);
+            foreach(var data in result)
+            {
+                Console.WriteLine($"FirstName:- {data.FirstName} \t LastName:- {data.LastName} \t Address:- {data.Address} \t City:- {data.City} \t {data.State} \t Zip:- {data.ZIP} \t PhoneNumber:- {data.PhoneNumber} \t Email:- {data.Email}");
+            }
+        }
     }
 }

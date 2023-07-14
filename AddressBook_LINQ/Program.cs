@@ -5,10 +5,11 @@
         public static void Main(string[] args)
         {
             List<Contacts> contacts = new List<Contacts>();
+            AddressBookMain address=new AddressBookMain();
             bool flag = true;
             while (flag)
             {
-                Console.WriteLine("Choose Option to Perform Operation\n1.Add Contact\n2.Exit");
+                Console.WriteLine("Choose Option to Perform Operation\n1.Add Contact\n2.Display By Descending Order\n3.Exit");
                 int option=Convert.ToInt32(Console.ReadLine());
                 switch (option)
                 {
@@ -27,6 +28,9 @@
                         }
                         break;
                     case 2:
+                        address.TopRecords(contacts);
+                        break;
+                    case 3:
                         flag = false;
                         break;
                 }
