@@ -23,7 +23,7 @@
                         foreach(var data in contacts)
                         {
                             Console.WriteLine($"FirstName:- {data.FirstName} \t LastName:- {data.LastName} \t Address:- {data.Address} \t City:- {data.City} \t {data.State} \t Zip:- {data.ZIP} \t PhoneNumber:- {data.PhoneNumber} \t Email:- {data.Email}");
-                            Console.WriteLine("");
+                            Console.WriteLine(" ");
                         }
                         break;
                     case 2:
