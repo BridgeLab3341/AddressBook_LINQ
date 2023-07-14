@@ -16,6 +16,18 @@ namespace AddressBook_LINQ
             foreach(var data in result)
             {
                 Console.WriteLine($"FirstName:- {data.FirstName} \t LastName:- {data.LastName} \t Address:- {data.Address} \t City:- {data.City} \t {data.State} \t Zip:- {data.ZIP} \t PhoneNumber:- {data.PhoneNumber} \t Email:- {data.Email}");
+                Console.WriteLine("");
+            }
+        }
+        public void SkipRecords(List<Contacts> contacts)
+        {
+            var result = (from contact in contacts 
+                          orderby contact.FirstName descending
+                          select contact).Skip(3);
+            foreach(var data in result)
+            {
+                Console.WriteLine($"FirstName:- {data.FirstName} \t LastName:- {data.LastName} \t Address:- {data.Address} \t City:- {data.City} \t {data.State} \t Zip:- {data.ZIP} \t PhoneNumber:- {data.PhoneNumber} \t Email:- {data.Email}");
+                Console.WriteLine("");
             }
         }
     }

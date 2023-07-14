@@ -9,7 +9,7 @@
             bool flag = true;
             while (flag)
             {
-                Console.WriteLine("Choose Option to Perform Operation\n1.Add Contact\n2.Display By Descending Order\n3.Exit");
+                Console.WriteLine("Choose Option to Perform Operation\n1.Add Contact\n2.Display By Descending Order\n3.Skip Top 3 Records\n4.Exit");
                 int option=Convert.ToInt32(Console.ReadLine());
                 switch (option)
                 {
@@ -31,6 +31,9 @@
                         address.TopRecords(contacts);
                         break;
                     case 3:
+                        address.TopRecords(contacts);
+                        break;
+                    case 4:
                         flag = false;
                         break;
                 }
