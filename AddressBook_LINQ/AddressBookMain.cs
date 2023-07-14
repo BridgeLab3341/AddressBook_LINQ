@@ -30,5 +30,15 @@ namespace AddressBook_LINQ
                 Console.WriteLine("");
             }
         }
+        public void GetRecords(List<Contacts> contacts)
+        {
+            var result = (from contact in contacts
+                          select contact);
+            foreach(var data in result)
+            {
+                Console.WriteLine($"FirstName:- {data.FirstName} \t LastName:- {data.LastName} " +
+                                    $"\t PhoneNumber:- {data.PhoneNumber}");
+            }
+        }
     }
 }
